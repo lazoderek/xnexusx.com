@@ -1,0 +1,10 @@
+@tailwind base;
+@layer base {
+	html {
+		@apply text-white;
+		@apply bg-black;
+	}
+}
+@tailwind components;
+@tailwind utilities;
+
