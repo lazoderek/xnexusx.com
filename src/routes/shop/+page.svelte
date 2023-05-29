@@ -1,9 +1,17 @@
 <script>
+    import { goto, beforeNavigate, afterNavigate } from '$app/navigation';
+    export let data;
+    const products = data.products;
+    const handleClick = () => {
+        goto('/$productId', {replaceState: true})
+    }
+
 	import tee from '$lib/images/TEE.png';
 	import hoodie from '$lib/images/HOODIE.png';
 	import xxx from '$lib/images/XXX.png';
 	import gameover from '$lib/images/GAMEOVER.png';
 </script>
+
 
 <div class="flex justify-center">
     <div
@@ -26,6 +34,14 @@
                 </div>
             </div>
         </div>
+        <h1>{data.title}</h1>
+        {#each products as product}
+            <div>
+                <h2>{product.title}</h2>
+                <p>{product.description}</p>
+                <hr />
+            </div>
+        {/each}
         <div class="">
             <div class="flex flex-col">
                 <div>
