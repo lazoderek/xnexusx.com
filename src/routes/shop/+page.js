@@ -48,7 +48,7 @@ export const load = async (LoadEvent) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-Shopify-Storefront-Access-Token': import.meta.env.VITE_SHOPIFY_STOREFRONT_API_TOKEN
+                'X-Shopify-Access-Token': import.meta.env.VITE_SHOPIFY_STOREFRONT_API_TOKEN
             },
             body: JSON.stringify({ query })
         }).then((res) => res.json());
@@ -58,7 +58,6 @@ export const load = async (LoadEvent) => {
             console.log({ result });
             return 'No results found.';
         }
-        console.log(result.data);
         return result.data;
     } catch (error) {
         console.log(error);
