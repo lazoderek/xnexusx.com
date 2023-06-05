@@ -5,6 +5,7 @@
     $: products = data.products;
 </script>
 
+<slot />
 <div class="grid
             grid-cols-2
             gap-y-7
